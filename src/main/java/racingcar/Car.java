@@ -9,6 +9,11 @@ import static java.util.stream.Collectors.toList;
 
 public class Car {
     public static final int START_SCORE = 1;
+    private static final int MAX_CARNAME = 5;
+    private static final int MIN_RANDNUM = 3;
+    private static final String DASH_PRINT_POSITION = "-";
+
+
     private int position;
     private final String name;
 
@@ -56,14 +61,14 @@ public class Car {
     }
 
     private static void validateCarNameLength(String str) {
-        if (str.length() > 5) {
+        if (str.length() > MAX_CARNAME) {
             throw new IllegalArgumentException("차량 이름은 5자를 넘어서는 안됩니다.");
         }
     }
 
 
     public static Car updatePosition(Car car, int num) {
-        if (num > 3) {
+        if (num > MIN_RANDNUM) {
             car.position++;
         }
         return new Car(car.name, car.position);
@@ -80,8 +85,7 @@ public class Car {
     }
 
     private static String makeDash(int carScore) {
-        String dash = "-";
-        return dash.repeat(carScore);
+        return DASH_PRINT_POSITION.repeat(carScore);
     }
 
     @Override
