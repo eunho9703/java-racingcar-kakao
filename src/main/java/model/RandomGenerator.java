@@ -14,7 +14,7 @@ public class RandomGenerator {
     public static List<Integer> makeRanNumList(int trialNum) {
         List<Integer> randomNumList = new ArrayList<>();
 
-        for (int i=0; i<trialNum; i++) {
+        for (int i = 0; i < trialNum; i++) {
             randomNumList.add(makeRanNum());
         }
 
