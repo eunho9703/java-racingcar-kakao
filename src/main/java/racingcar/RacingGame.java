@@ -33,6 +33,11 @@ public class RacingGame {
         gameCount++;
     }
 
+
+    public boolean isEnd() {
+        return tryNo == gameCount;
+    }
+
     public List<Car> getCars() {
         return carList;
     }
