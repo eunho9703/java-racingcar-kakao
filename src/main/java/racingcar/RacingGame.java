@@ -1,14 +1,11 @@
+package racingcar;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-
-import model.Car;
-import model.Race;
-import model.RandomGenerator;
 
 import static java.util.stream.Collectors.*;
-import static view.ResultView.printCars;
+import static racingcar.view.ResultView.printCars;
 
 public class RacingGame {
 

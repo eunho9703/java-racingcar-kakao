@@ -1,10 +1,9 @@
-package view;
+package racingcar.view;
 
 import java.util.List;
 import java.util.StringJoiner;
 
-import model.Car;
-import model.Race;
+import racingcar.Car;
 
 
 public class ResultView {

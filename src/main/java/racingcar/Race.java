@@ -1,10 +1,10 @@
-package model;
+package racingcar;
 
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static model.Car.START_SCORE;
-import static model.Car.updatePosition;
+import static racingcar.Car.START_SCORE;
+import static racingcar.Car.updatePosition;
 
 public class Race {
     List<Car> carList;

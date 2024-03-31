@@ -1,5 +1,8 @@
-import view.InputView;
-import view.ResultView;
+package racingcar;
+
+import racingcar.RacingGame;
+import racingcar.view.InputView;
+import racingcar.view.ResultView;
 
 
 public class RacingMain {
