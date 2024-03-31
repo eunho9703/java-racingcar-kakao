@@ -18,7 +18,6 @@ public class Car {
     private final String name;
 
     public Car(String name, int position) {
-        validate(name);
         this.name = name;
         this.position = position;
     }
@@ -39,6 +38,7 @@ public class Car {
 
 
     public static List<Car> createCar(String[] carNameList) {
+        validate(carNameList);
         return stream(carNameList)
                 .map(carName -> {
                     return new Car(carName, START_SCORE);
@@ -46,8 +46,7 @@ public class Car {
                 .collect(toList());
     }
 
-    public static void validate(String str) {
-        String[] carNameList = str.split(",");
+    public static void validate(String[] carNameList) {
         HashSet<String> checker = new HashSet<>();
 
         for (String carName : carNameList) {

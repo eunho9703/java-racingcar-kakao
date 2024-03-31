@@ -48,11 +48,12 @@ public class CarTest {
 
     @Test
     void isGetCar_ShouldThrowIllegalArgumentExceptionWithOverFive() {
-        String carStr = "longNamehaha";
+        String carString = "longNamehaha,a";
+        String[] split = carString.split(",");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
-                    Car.validate(carStr);
+                    Car.validate(split);
                 }).withMessage("차량 이름은 5자를 넘어서는 안됩니다.");
     }
 
