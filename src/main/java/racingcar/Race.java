@@ -3,11 +3,10 @@ package racingcar;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static racingcar.Car.START_SCORE;
 import static racingcar.Car.updatePosition;
 
 public class Race {
-    List<Car> carList;
+    private final List<Car> carList;
 
     public Race(List<Car> carList) {
         this.carList = carList;
@@ -29,9 +28,9 @@ public class Race {
     private int getMaxScore() {
         return this.carList
                 .stream()
-                .map(Car::getPosition)
-                .max(Integer::compareTo)
-                .orElse(START_SCORE);
+                .mapToInt(Car::getPosition)
+                .max()
+                .orElseThrow(() -> new IllegalStateException("차 리스트가 비어있습니다."));
     }
 
     public static List<Car> updateCarByNum(List<Car> initCarList, List<Integer> randomNumList) {

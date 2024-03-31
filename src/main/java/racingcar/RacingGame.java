@@ -13,7 +13,7 @@ public class RacingGame {
     private final int tryNo;
     private int gameCount;
 
-    public static List<Car> carList = new ArrayList<>();
+    public List<Car> carList = new ArrayList<>();
 
     public RacingGame(String carNames, int tryNo) {
         this.carNames = carNames;
@@ -37,9 +37,6 @@ public class RacingGame {
         return carList;
     }
 
-    public boolean isEnd() {
-        return tryNo == gameCount;
-    }
 
     public List<String> getWinners() {
         Race race = new Race(carList);
