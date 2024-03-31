@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 public class StringCalculator {
     private static final int CUSTOM_DELIMITER_GROUPINDEX = 1;
     private static final int TEXT_GROUPINDEX = 2;
-    private static Matcher matcher = null;
 
 
     public static int sumProcess(String[] strList) {
@@ -17,11 +16,11 @@ public class StringCalculator {
     }
 
     public static String[] split(String text) {
+        Matcher matcher= Pattern.compile("//(.)\n(.*)").matcher(text);
+
         if (text == null || text.isEmpty()) {
             return new String[]{"0"};
         }
-
-        matcher = Pattern.compile("//(.)\n(.*)").matcher(text);
 
         if (matcher.find()) {
             String customDelimiter = matcher.group(CUSTOM_DELIMITER_GROUPINDEX) + "|,|;";
