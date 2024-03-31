@@ -7,8 +7,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class StringCalculator {
-    private static int CUSTOM_DELIMITER_GROUPINDEX = 1;
-    private static int TEXT_GROUPINDEX = 2;
+    private static final int CUSTOM_DELIMITER_GROUPINDEX = 1;
+    private static final int TEXT_GROUPINDEX = 2;
     private static Matcher matcher = null;
 
 
