@@ -3,6 +3,7 @@ package racingcar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import static java.util.Arrays.*;
 import static java.util.stream.Collectors.toList;
@@ -31,7 +32,7 @@ public class Car {
     }
 
     public static void validate(String[] carNameList) {
-        HashSet<String> checker = new HashSet<>();
+        Set<String> checker = new HashSet<>();
 
         for (String carName : carNameList) {
             validateCarNameLength(carName);
