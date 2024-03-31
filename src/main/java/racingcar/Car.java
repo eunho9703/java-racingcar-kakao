@@ -58,6 +58,10 @@ public class Car {
         return new Car(car.name, car.position);
     }
 
+    public static Boolean isMaxPosition(Car car, int maxPosition) {
+        return car.getPosition() == maxPosition;
+    }
+
 
     public static String makeCarPrint(Car car) {
         return car.name + " : " + makeDash(car.position);

@@ -13,19 +13,15 @@ public class Race {
     }
 
     public List<Car> getWinner() {
-        int maxScore = getMaxScore();
+        int maxPosition = getMaxPosition();
 
         return this.carList
                 .stream()
-                .filter(car -> isMaxScoreCar(car, maxScore))
+                .filter(car -> Car.isMaxPosition(car, maxPosition))
                 .collect(toList());
     }
 
-    public static boolean isMaxScoreCar(Car car, int maxScore) {
-        return car.getPosition() == maxScore;
-    }
-
-    private int getMaxScore() {
+    private int getMaxPosition() {
         return this.carList
                 .stream()
                 .mapToInt(Car::getPosition)
