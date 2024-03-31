@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomGenerator {
-    private static final Random random = new Random();
+    private static final Random randomScore = new Random();
 
     private static int makeRanNum() {
-        return random.nextInt(10);
+        return randomScore.nextInt(10);
     }
 
     public static List<Integer> makeRanNumList(int trialNum) {
