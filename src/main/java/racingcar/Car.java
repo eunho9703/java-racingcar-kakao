@@ -22,27 +22,11 @@ public class Car {
         this.position = position;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-    public static List<Car> getCar(String[] carNameList) {
-        return stream(carNameList)
-                .map(carName -> new Car(carName, START_SCORE))
-                .collect(toList());
-    }
-
 
     public static List<Car> createCar(String[] carNameList) {
         validate(carNameList);
         return stream(carNameList)
-                .map(carName -> {
-                    return new Car(carName, START_SCORE);
-                })
+                .map(carName -> new Car(carName, START_SCORE))
                 .collect(toList());
     }
 
@@ -75,12 +59,7 @@ public class Car {
 
 
     public static String makeCarPrint(Car car) {
-        String stringBuilder = car.name +
-                " : " +
-                makeDash(car.position);
-
-        return stringBuilder;
-
+        return car.name + " : " + makeDash(car.position);
     }
 
     private static String makeDash(int carScore) {
@@ -99,5 +78,14 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(position, name);
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
     }
 }
