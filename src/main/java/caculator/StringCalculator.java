@@ -15,7 +15,7 @@ public class StringCalculator {
     }
 
     public static String[] split(String text) {
-        Matcher matcher= Pattern.compile("//(.)\n(.*)").matcher(text);
+        Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(text);
 
         if (text == null || text.isEmpty()) {
             return new String[]{"0"};

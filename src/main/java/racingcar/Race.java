@@ -17,7 +17,7 @@ public class Race {
 
         return this.carList
                 .stream()
-                .filter(car -> Car.isMaxPosition(car, maxPosition))
+                .filter(car -> car.isSamePosition(maxPosition))
                 .collect(toList());
     }
 
