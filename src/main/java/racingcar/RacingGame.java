@@ -33,8 +33,7 @@ public class RacingGame {
     }
 
     public boolean isEnd() {
-        //return tryNo == gameCount;
-        return tryNo == 0;
+        return tryNo == INITIAL_TRY_NO;
     }
 
     public List<Car> getCars() {
