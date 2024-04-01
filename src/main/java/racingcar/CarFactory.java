@@ -9,7 +9,7 @@ import static java.util.stream.Collectors.toList;
 
 public class CarFactory {
 
-    public static final int START_SCORE = 1;
+    private static final int START_SCORE = 1;
 
     public static List<Car> createCar(String[] carNameList) {
         validateDuplicateName(asList(carNameList));
