@@ -14,21 +14,9 @@ public class Car {
     private final String name;
 
     public Car(String name, int position) {
+        validateCarNameLength(name);
         this.name = name;
         this.position = position;
-    }
-
-    public static void validate(String[] carNames) {
-        Set<String> checker = new HashSet<>();
-
-        for (String carName : carNames) {
-            validateCarNameLength(carName);
-            checker.add(carName);
-        }
-
-        if (checker.size() != carNames.length) {
-            throw new IllegalArgumentException("동일한 차량 이름은 불가능합니다.");
-        }
     }
 
     private static void validateCarNameLength(String str) {
@@ -43,7 +31,7 @@ public class Car {
         }
         return new Car(car.name, car.position);
     }
-    
+
     public boolean isSamePosition(int position) {
         return this.position == position;
     }
