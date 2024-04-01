@@ -13,6 +13,11 @@ public class Car {
     private int position;
     private final String name;
 
+    public Car(String name) {
+        this.name = name;
+        this.position = START_SCORE;
+    }
+
     public Car(String name, int position) {
         validateCarNameLength(name);
         this.name = name;

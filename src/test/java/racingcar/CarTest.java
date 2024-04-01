@@ -62,7 +62,7 @@ public class CarTest {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
-                    new Car(carString, 0);
+                    new Car(carString);
                 }).withMessage("차량 이름은 5자를 넘어서는 안됩니다.");
     }
 
