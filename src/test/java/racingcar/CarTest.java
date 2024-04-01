@@ -22,7 +22,6 @@ public class CarTest {
         assertThat(expectedMove).isEqualTo(afterMove);
     }
 
-
     @ParameterizedTest
     @ValueSource(ints = {0, 1, 2, 3})
     void isUpdateCarScore_ShouldNotIncreaseScoreLessOrEqualWithThree(int num) {

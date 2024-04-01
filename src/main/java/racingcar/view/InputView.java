@@ -11,7 +11,6 @@ public class InputView {
         return sc.nextLine();
     }
 
-
     public static int getTryNo() {
         System.out.println("시도할 회수는 몇회인가요?");
         return Integer.parseInt(sc.nextLine());

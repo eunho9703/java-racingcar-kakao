@@ -17,7 +17,6 @@ public class RandomGenerator {
         for (int i = 0; i < trialNum; i++) {
             randomNumList.add(makeRanNum());
         }
-
         return randomNumList;
     }
 }

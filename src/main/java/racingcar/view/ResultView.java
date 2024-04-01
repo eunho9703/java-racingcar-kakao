@@ -19,7 +19,6 @@ public class ResultView {
         for (String carName : carNameList) {
             joiner.add(carName);
         }
-
         System.out.println(joiner + " 가 최종 우승했습니다.");
     }
 
