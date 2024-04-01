@@ -18,23 +18,15 @@ public class Car {
         this.position = position;
     }
 
-
-    public static List<Car> createCar(String[] carNameList) {
-        validate(carNameList);
-        return stream(carNameList)
-                .map(carName -> new Car(carName, START_SCORE))
-                .collect(toList());
-    }
-
-    public static void validate(String[] carNameList) {
+    public static void validate(String[] carNames) {
         Set<String> checker = new HashSet<>();
 
-        for (String carName : carNameList) {
+        for (String carName : carNames) {
             validateCarNameLength(carName);
             checker.add(carName);
         }
 
-        if (checker.size() != carNameList.length) {
+        if (checker.size() != carNames.length) {
             throw new IllegalArgumentException("동일한 차량 이름은 불가능합니다.");
         }
     }
@@ -51,9 +43,9 @@ public class Car {
         }
         return new Car(car.name, car.position);
     }
-
-    public static Boolean isMaxPosition(Car car, int maxPosition) {
-        return car.getPosition() == maxPosition;
+    
+    public boolean isSamePosition(int position) {
+        return this.position == position;
     }
 
     public static String makeCarPrint(Car car) {
