@@ -10,12 +10,14 @@ public class StringCalculator {
     private static final int CUSTOM_DELIMITER_GROUPINDEX = 1;
     private static final int TEXT_GROUPINDEX = 2;
 
+    private static Matcher matcher = null;
+
     public static int sumProcess(String[] strList) {
         return sum(toInts(strList));
     }
 
     public static String[] split(String text) {
-        Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(text);
+        matcher = Pattern.compile("//(.)\n(.*)").matcher(text);
 
         if (text == null || text.isEmpty()) {
             return new String[]{"0"};
