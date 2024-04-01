@@ -13,7 +13,7 @@ public class RacingGame {
     private final int tryNo;
     private int gameCount;
 
-    public List<Car> carList = new ArrayList<>();
+    private List<Car> carList = new ArrayList<>();
 
     public RacingGame(String carNames, int tryNo) {
         this.carNames = carNames;
