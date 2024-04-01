@@ -35,7 +35,7 @@ public class CarTest {
     void isGetCar_ShouldReturnSplitCarList() {
         String carString = "pobi,crong,honux";
         String[] split = carString.split(",");
-        List<Car> carList = Car.createCar(split);
+        List<Car> carList = CarFactory.createCar(split);
 
         List<Car> expectedCarList = new ArrayList<>();
         expectedCarList.add(new Car("pobi", Car.START_SCORE));
