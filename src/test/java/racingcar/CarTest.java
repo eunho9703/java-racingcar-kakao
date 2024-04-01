@@ -46,13 +46,23 @@ public class CarTest {
     }
 
     @Test
-    void isGetCar_ShouldThrowIllegalArgumentExceptionWithOverFive() {
-        String carString = "longNamehaha,a";
+    void isGetCar_ShouldThrowIllegalArgumentExceptionWithDuplicateName() {
+        String carString = "pobi,pobi,honux";
         String[] split = carString.split(",");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
-                    Car.validate(split);
+                    CarFactory.createCar(split);
+                }).withMessage("동일한 차량 이름은 불가능합니다.");
+    }
+
+    @Test
+    void isGetCar_ShouldThrowIllegalArgumentExceptionWithOverFive() {
+        String carString = "longNamehaha,a";
+
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> {
+                    new Car(carString, 0);
                 }).withMessage("차량 이름은 5자를 넘어서는 안됩니다.");
     }
 
