@@ -10,8 +10,7 @@ import static racingcar.view.ResultView.printCars;
 public class RacingGame {
 
     private final String carNames;
-    private final int tryNo;
-    private int gameCount;
+    private int tryNo;
 
     private List<Car> carList = new ArrayList<>();
 
@@ -24,17 +23,18 @@ public class RacingGame {
 
     private void makeCar() {
         String[] split = carNames.split(",");
-        carList = Car.createCar(split);
+        carList = CarFactory.createCar(split);
     }
 
     public void race() {
-        List<Integer> ranNumList = RandomGenerator.makeRanNumList(tryNo);
+        List<Integer> ranNumList = RandomGenerator.makeRanNumList(carList.size());
         Race.updateCarByNum(carList, ranNumList);
-        gameCount++;
+        tryNo--;
     }
 
     public boolean isEnd() {
-        return tryNo == gameCount;
+        //return tryNo == gameCount;
+        return tryNo == 0;
     }
 
     public List<Car> getCars() {
