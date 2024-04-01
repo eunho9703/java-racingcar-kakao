@@ -10,7 +10,6 @@ public class StringCalculator {
     private static final int CUSTOM_DELIMITER_GROUPINDEX = 1;
     private static final int TEXT_GROUPINDEX = 2;
 
-
     public static int sumProcess(String[] strList) {
         return sum(toInts(strList));
     }
@@ -36,14 +35,12 @@ public class StringCalculator {
                 .collect(Collectors.toList());
     }
 
-
     private static int sum(List<Integer> numbers) {
         int sum = 0;
 
         for (int number : numbers) {
             sum += number;
         }
-
         return sum;
     }
 }

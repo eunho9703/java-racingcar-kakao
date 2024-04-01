@@ -41,7 +41,6 @@ class RaceTest {
 
         List<Car> updateCarList = Race.updateCarByNum(initCarList, randomNumList);
 
-
         List<Car> expectedCarList = new ArrayList<>();
         expectedCarList.add(new Car("pobi", 1));
         expectedCarList.add(new Car("crong", 0));

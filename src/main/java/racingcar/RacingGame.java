@@ -33,7 +33,6 @@ public class RacingGame {
         gameCount++;
     }
 
-
     public boolean isEnd() {
         return tryNo == gameCount;
     }
@@ -41,7 +40,6 @@ public class RacingGame {
     public List<Car> getCars() {
         return carList;
     }
-
 
     public List<String> getWinners() {
         Race race = new Race(carList);
