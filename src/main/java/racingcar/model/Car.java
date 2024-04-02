@@ -12,6 +12,7 @@ public class Car {
     private final String name;
 
     public Car(String name) {
+        validateCarNameLength(name);
         this.name = name;
         this.position = START_SCORE;
     }
