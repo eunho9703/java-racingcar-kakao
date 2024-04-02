@@ -3,6 +3,7 @@ package racingcar;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import racingcar.model.RandomGenerator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

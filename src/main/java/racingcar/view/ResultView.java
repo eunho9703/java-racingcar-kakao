@@ -3,7 +3,7 @@ package racingcar.view;
 import java.util.List;
 import java.util.StringJoiner;
 
-import racingcar.Car;
+import racingcar.model.Car;
 
 
 public class ResultView {

@@ -1,5 +1,10 @@
 package racingcar;
 
+import racingcar.model.Car;
+import racingcar.model.CarFactory;
+import racingcar.model.Race;
+import racingcar.model.RandomGenerator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,14 +13,14 @@ import static java.util.stream.Collectors.*;
 import static racingcar.view.ResultView.printCars;
 
 public class RacingGame {
-ao    private static final int INITIAL_TRY_NO = 0;
+    private static final int INITIAL_TRY_NO = 0;
 
-    private final String carNames;
+    private List<String> carNames;
     private int tryNo;
 
     private List<Car> cars = new ArrayList<>();
 
-    public RacingGame(String carNames, int tryNo) {
+    public RacingGame(List<String> carNames, int tryNo) {
         this.carNames = carNames;
         this.tryNo = tryNo;
         makeCar();
@@ -23,8 +28,7 @@ ao    private static final int INITIAL_TRY_NO = 0;
     }
 
     private void makeCar() {
-        String[] split = carNames.split(",");
-        cars = CarFactory.createCar(split);
+        cars = CarFactory.createCar(carNames);
     }
 
     public void race() {

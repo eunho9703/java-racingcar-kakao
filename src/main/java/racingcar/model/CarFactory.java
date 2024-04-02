@@ -11,10 +11,10 @@ public class CarFactory {
 
     private static final int START_SCORE = 1;
 
-    public static List<Car> createCar(String[] carNameList) {
-        validateDuplicateName(asList(carNameList));
+    public static List<Car> createCar(List<String> carNameList) {
+        validateDuplicateName(carNameList);
 
-        return stream(carNameList)
+        return carNameList.stream()
                 .map(carName -> {
                     return new Car(carName, START_SCORE);
                 })

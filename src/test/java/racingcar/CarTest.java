@@ -6,7 +6,10 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import racingcar.model.Car;
+import racingcar.model.CarFactory;
 
+import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
@@ -35,7 +38,7 @@ public class CarTest {
     void isGetCar_ShouldReturnSplitCarList() {
         String carString = "pobi,crong,honux";
         String[] split = carString.split(",");
-        List<Car> carList = CarFactory.createCar(split);
+        List<Car> carList = CarFactory.createCar(asList(split));
 
         List<Car> expectedCarList = new ArrayList<>();
         expectedCarList.add(new Car("pobi", Car.START_SCORE));
@@ -52,7 +55,7 @@ public class CarTest {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
-                    CarFactory.createCar(split);
+                    CarFactory.createCar(asList(split));
                 }).withMessage("동일한 차량 이름은 불가능합니다.");
     }
 
