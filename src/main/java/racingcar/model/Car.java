@@ -1,8 +1,6 @@
-package racingcar;
+package racingcar.model;
 
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 public class Car {
     public static final int START_SCORE = 1;

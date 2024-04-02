@@ -1,10 +1,10 @@
-package racingcar;
+package racingcar.model;
 
-import java.util.HashSet;
+import racingcar.model.Car;
+
 import java.util.List;
 import java.util.Set;
 
-import static java.util.Arrays.*;
 import static java.util.stream.Collectors.toList;
 
 public class CarFactory {

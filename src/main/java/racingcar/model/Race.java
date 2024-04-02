@@ -1,9 +1,11 @@
-package racingcar;
+package racingcar.model;
+
+import racingcar.model.Car;
 
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static racingcar.Car.updatePosition;
+import static racingcar.model.Car.updatePosition;
 
 public class Race {
     private final List<Car> carList;
